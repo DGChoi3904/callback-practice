@@ -59,7 +59,11 @@ dirRaw.forEach((Dirent)=>{
   currentDir.directory = directory;
   currentDir.file = file;
 })
-
+function dirHTMLMaker(rawDir){
+  rawDir.forEach((Dirent) => {
+    
+  })
+}
 console.log(currentDir);
 console.dir(dirRaw[0]);
 

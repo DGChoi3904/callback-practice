@@ -12,17 +12,17 @@
   </style>
 </head>
 <body>
-  <form action="cd" method="GET">
+  <form action="/example.html" method="POST">
       <label for="cd">Search your Dir:</label>
       <input type="text" placeholder="example.txt" name="name" id="cd" required>
       <input type="submit" value="Search"/>
   </form>
-  <form action="mkdir" method="GET">
+  <form action="/example.html" method="GET">
       <label for="mkdir">Write name for the new Directory.</label>
       <input type="text" placeholder="/example" name="name" id="mkdir" required>
       <input type="submit" value="Make Dir">
   </form>
-  <form action="rm" method="GET">
+  <form action="/" method="GET">
       <label for="rm">Write file or directory name you want to delete.</label>
       <input type="text" placeholder="example.txt" name="name" id="rm" required>
       <input type="submit" value="Erease!">
@@ -32,19 +32,27 @@
   </div>
   <script>
     let HTMLtext = "";
-    let braketStart = "<"
-    let braketEnd = ">"
-    let slash = "/"
-    function UlBulider(dirObj, maker){
-      let listStyNone = `style="list-style : none"`
-      let count = 0;
-      for(let item in dirObj){
-        for(let names in dirObj[item]){
-          count++;
-        }
+    let myDir = [
+      {
+        name: "hello",
+        type : 2
+      },
+      {
+        name: "IMDIR",
+        type : 2
+      },
+      {
+        name: "file1.txt",
+        type : 1
+      },
+      {
+        name: "file2.txt",
+        type : 1
       }
-      return maker(dirObj, count, listStyNone)
-    }
+    ]
+    //function dirViewBulider(dirArr, maker){}
+  
+
   </script>
 </body>
 </html>
