@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    form {
+      width: 200px;
+    }
+  </style>
+</head>
+<body>
+  <form action="cd" method="GET">
+      <label for="cd">Search your Dir:</label>
+      <input type="text" placeholder="example.txt" name="name" id="cd" required>
+      <input type="submit" value="Search"/>
+  </form>
+  <form action="mkdir" method="GET">
+      <label for="mkdir">Write name for the new Directory.</label>
+      <input type="text" placeholder="/example" name="name" id="mkdir" required>
+      <input type="submit" value="Make Dir">
+  </form>
+  <form action="rm" method="GET">
+      <label for="rm">Write file or directory name you want to delete.</label>
+      <input type="text" placeholder="example.txt" name="name" id="rm" required>
+      <input type="submit" value="Erease!">
+  </form>
+  <div id="result">
+    <hr>
+  </div>
+  <script>
+    let HTMLtext = "";
+    let braketStart = "<"
+    let braketEnd = ">"
+    let slash = "/"
+    function UlBulider(dirObj, maker){
+      let listStyNone = `style="list-style : none"`
+      let count = 0;
+      for(let item in dirObj){
+        for(let names in dirObj[item]){
+          count++;
+        }
+      }
+      return maker(dirObj, count, listStyNone)
+    }
+  </script>
+</body>
+</html>
